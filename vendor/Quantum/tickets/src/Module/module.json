@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "Quantum\\tickets",
+    "name": "Quantum Tickets",
+    "slug": "quantum_tickets",
+    "description": "Ticket Support Desk.",
+    "version": "2.0.21"
+  }
+}

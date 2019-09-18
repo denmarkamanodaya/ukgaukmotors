@@ -1,0 +1,5 @@
+- ## Getting Started
+    - [Installation](/admin/docs/{{version}}/installation)
+- ## Events
+    - [User](/admin/docs/{{version}}/userEvents)
+    - [Tickets](/admin/docs/{{version}}/ticketEvents)

@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "App",
+    "name": "Gauk Motors Platform2",
+    "slug": "gauk_motors_platform2",
+    "description": "The Main Platform.",
+    "version": "2.0.69"
+  }
+}

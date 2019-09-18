@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "Quantum\\newsletter",
+    "name": "Quantum Newsletter",
+    "slug": "quantum_newsletter",
+    "description": "Newsletter Management System.",
+    "version": "2.0.33"
+  }
+}

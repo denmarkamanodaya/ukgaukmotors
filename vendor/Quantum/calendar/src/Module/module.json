@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "Quantum\\calendar",
+    "name": "Quantum Calendar",
+    "slug": "quantum_calendar",
+    "description": "To Register and show calendar events.",
+    "version": "2.0.26"
+  }
+}

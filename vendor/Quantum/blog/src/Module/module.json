@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "Quantum\\blog",
+    "name": "Quantum Blog",
+    "slug": "quantum_blog",
+    "description": "Site Blogging.",
+    "version": "2.0.38"
+  }
+}

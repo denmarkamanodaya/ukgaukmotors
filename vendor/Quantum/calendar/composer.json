@@ -1,0 +1,39 @@
+{
+    "name": "Quantum/calendar",
+    "description": "To register and show calendar events",
+    "keywords": [
+        "Quantum",
+        "Base",
+        "Calendar",
+        "Laravel"
+    ],
+    "homepage": "http://Quantumscripts.co.uk",
+    "license": "Private",
+    "authors": [
+        {
+            "name": "David Agar",
+            "email": "dave@quantumscripts.co.uk",
+            "homepage": "http://Quantumscripts.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/database": "5.4.*|5.5.*",
+        "illuminate/filesystem": "5.4.*|5.5.*",
+        "illuminate/http": "5.4.*|5.5.*",
+        "illuminate/support": "5.4.*|5.5.*",
+        "illuminate/view": "5.4.*|5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quantum\\calendar\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Quantum\\calendar\\": "tests"
+        }
+    },
+    "minimum-stability": "dev"
+}

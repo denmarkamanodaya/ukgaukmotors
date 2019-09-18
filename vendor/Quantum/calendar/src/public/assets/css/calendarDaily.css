@@ -1,0 +1,223 @@
+.calBox {
+  background-color: #f5f5f569;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  text-align: center;
+  color: #7f7f7f;
+  margin-bottom: 10px;
+}
+
+.calElement {
+  margin: 0px;
+  display: inline-block;
+  overflow:hidden;
+}
+
+.calYear {
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 5px
+}
+
+.calYear .calElement {
+  border: 0px solid #999999;
+}
+
+.calMonth {
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+}
+
+.calMonth .calElement {
+  font-size: 24px;
+}
+
+.calDay {
+  height: 100px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.calDay .calElement {
+  font-size: 12px;
+  border: 0px solid #999999;
+}
+
+.calDay .calElement.prev {
+  height: 100%;
+  font-size: 38px;
+  display: inline-block;
+  text-align: center;
+}
+
+.calDay .calElement.next {
+  height: 100%;
+  font-size: 38px;
+  display: inline-block;
+  text-align: center;
+}
+
+.calDay .calElement.next i, .calDay .calElement.prev i{
+  top: 30%;
+  position: relative;
+}
+
+span.calElement.next:hover, span.calElement.prev:hover {
+  background-color: #FFFFFF;
+  color: #0a68b4;
+  cursor: pointer;
+}
+
+.calDay .calElement .dayNumber {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+
+.calElement.selected {
+  background-color: #636363;
+  border: 1px solid #404040;
+  -moz-border-radius: 3px;
+  color: #b9b9b9;
+}
+
+.calElement.selected:hover {
+  border: 1px solid #404040;
+}
+
+span.calElement:hover {
+  background-color: #f3f3f3;
+  border: 0px solid #f3f3f3;
+  -moz-border-radius: 3px;
+  cursor: pointer;
+}
+
+.calElement.today {
+  border: 1px solid #e0e000;
+  -moz-border-radius: 3px
+}
+
+.calElement.today:hover {
+  border: 1px solid #e0e000;
+  -moz-border-radius: 3px
+}
+
+.calSpinner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 64px;
+  margin-top: 30px;
+}
+
+.timedEvent {
+  font-size: 14px;
+}
+.eventDetailsHeading {
+  display: block;
+  font-size: 2em;
+  margin-top: -8px;
+}
+
+.eventDetailsSubHeading {
+  display: block;
+  font-size: 1.5em;
+  margin-top: -8px;
+}
+
+.cal_event_image {
+  padding: 120px;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.eventMapContainer {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.panel-heading .accordion-toggle:after {
+  /* symbol for "opening" panels */
+  font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+  content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+  float: right;        /* adjust as needed */
+  color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+.calendardot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}
+
+.calendardotAdj {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}
+
+.calElement.selected .calendardot {
+  border: 1px solid #423b3b80;
+  padding: 3px;
+  height: 11px;
+  width: 11px;
+}
+
+
+.dayName {
+  font-family: 'roboto', 'oswald','arial narrow';
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-bottom: 4px;
+  padding-top: 15px;
+}
+
+#calEvents .panel-group {
+  margin-bottom: 0px;
+}
+#calEvents .panel {
+  border-radius: 0px;
+  border-bottom: 1px;
+}
+
+#calEvents .panel-heading {
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: #37474f;
+  border-radius: 0px;
+}
+
+#calEvents .panel-heading:hover {
+  border-left-width: 10px;
+}
+
+#calEvents .panel-heading {
+  color: #6B6B6B;
+}
+
+#calEvents .panel-heading a{
+  font-size: 22px;
+  color: #6B6B6B;
+    font-weight: 700;
+}
+
+#filter-list {
+  font-size: 14px;
+  color: #888080;
+}
+

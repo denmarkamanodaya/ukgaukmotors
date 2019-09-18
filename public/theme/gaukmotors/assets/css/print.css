@@ -1,0 +1,15 @@
+@media print {
+    .cs-main-nav, .cs-banner, .page-breadcrumbs-container, .cs-detail-nav, .page-sidebar, .cs-agent-map2, .cs-footer-widgets, .cs-back-to-top {
+
+        display: none;
+    }
+
+    #footer {
+        padding: 0 0!important;
+    }
+    .cs-logo {
+        padding-bottom: 15px;
+    }
+}
+
+

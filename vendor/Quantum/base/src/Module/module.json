@@ -1,0 +1,9 @@
+{
+  "module": {
+    "namespace": "Quantum\\base",
+    "name": "Quantum Base",
+    "slug": "quantum_base",
+    "description": "The Main Admin / Members / Public area scripts.",
+    "version": "2.0.70"
+  }
+}

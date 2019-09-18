@@ -1,0 +1,1 @@
+{!! $timedMail->html_message !!}
