@@ -1,5 +1,0 @@
-notifications_events
-
-login change
-
-Illuminate\Auth\Events\Login

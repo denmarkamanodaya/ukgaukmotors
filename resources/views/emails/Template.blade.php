@@ -1,1 +1,0 @@
-@include(Theme::template('email'))

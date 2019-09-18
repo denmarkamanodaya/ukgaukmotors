@@ -1,1 +1,0 @@
-<div style="text-align: center;"><img height="233" src="https://gaukmotors.co.uk/media/06-18/photos/Gauk/42_Newsletter_Header.jpg" width="700" /></div>

@@ -1,1 +1,0 @@
-<div class="upgradetxt text-center mb-20 mt-20"><a href="{!! url('register') !!}"><img src="{!! url('/images/Button-unlock.jpg') !!}"></a></div>
