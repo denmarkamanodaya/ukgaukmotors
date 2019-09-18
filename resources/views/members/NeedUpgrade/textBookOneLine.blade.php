@@ -1,0 +1,1 @@
+<div class="upgradetxt text-center mt-20 mb-20"><a href="{!! url('members/upgrade') !!}">Upgrade to view this page.</a></div>
