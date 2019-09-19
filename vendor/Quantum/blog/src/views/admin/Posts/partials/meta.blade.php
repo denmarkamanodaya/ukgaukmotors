@@ -45,7 +45,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         {!! Form::label('description', 'Description', array('class' => 'control-label')) !!}
-                        {!! Form::text('description', isset($post->meta->description)? $post->meta->description : '', array('class' => 'form-control')) !!}
+                        {!! Form::text('description', isset($post->meta->description)? $post->meta->description : '', array('class' => 'form-control', 'maxlength' => 155, 'required' => 'required')) !!}
                         @if ($errors->has('description'))
                             <span class="help-block" for="description">{{ $errors->first('description') }}</span>
                         @endif
@@ -70,10 +70,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        {!! Form::label('title', 'Title', array('class' => 'control-label')) !!}
-                        {!! Form::text('title', isset($post->meta->title) ? $post->meta->title : '', array('class' => 'form-control')) !!}
-                        @if ($errors->has('title'))
-                            <span class="help-block" for="title">{{ $errors->first('title') }}</span>
+                        {!! Form::label('meta_title', 'Title', array('class' => 'control-label')) !!}
+                        {!! Form::text('meta_title', isset($post->meta->meta_title) ? $post->meta->meta_title : '', array('class' => 'form-control', 'maxlength' => 60)) !!}
+                        @if ($errors->has('meta_title'))
+                            <span class="help-block" for="title">{{ $errors->first('meta_title') }}</span>
                         @endif
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         {!! Form::label('type', 'Type', array('class' => 'control-label')) !!}
-                        {!! Form::select('type', ['website' => 'Website', 'article' => 'Article'], isset($post->meta->type)? $post->meta->type : '', array('class' => 'form-control')) !!}
+                        {!! Form::select('type', ['article' => 'Article', 'website' => 'Website'], isset($post->meta->type)? $post->meta->type : '', array('class' => 'form-control')) !!}
                         @if ($errors->has('type'))
                             <span class="help-block" for="type">{{ $errors->first('type') }}</span>
                         @endif
