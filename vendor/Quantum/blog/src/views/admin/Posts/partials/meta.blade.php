@@ -45,7 +45,8 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         {!! Form::label('description', 'Description', array('class' => 'control-label')) !!}
-                        {!! Form::text('description', isset($post->meta->description)? $post->meta->description : '', array('class' => 'form-control', 'maxlength' => 155, 'required' => 'required')) !!}
+			{!! Form::text('description', isset($post->meta->description)? $post->meta->description : '', array('class' => 'form-control', 'maxlength' => 155, 'required' => 'required')) !!}
+			{!!inputError($errors, 'description')!!}
                         @if ($errors->has('description'))
                             <span class="help-block" for="description">{{ $errors->first('description') }}</span>
                         @endif
@@ -71,7 +72,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         {!! Form::label('meta_title', 'Title', array('class' => 'control-label')) !!}
-                        {!! Form::text('meta_title', isset($post->meta->meta_title) ? $post->meta->meta_title : '', array('class' => 'form-control', 'maxlength' => 60)) !!}
+			{!! Form::text('meta_title', isset($post->meta->meta_title) ? $post->meta->meta_title : '', array('class' => 'form-control', 'maxlength' => 60)) !!}
+			{!!inputError($errors, 'meta_title')!!}
                         @if ($errors->has('meta_title'))
                             <span class="help-block" for="title">{{ $errors->first('meta_title') }}</span>
                         @endif
