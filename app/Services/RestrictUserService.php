@@ -35,6 +35,33 @@ class RestrictUserService
         session([$sessionName => $searches]);
     }
 
+
+    public function restrictViewMembers($sessionName)
+    {
+	    #dd(\Auth::user());
+	    if($this->is_bot()) return false;
+	    if($searches = session($sessionName))
+	    {
+		    if($searches > 19) return true;
+	    }
+
+	    return false;
+    }		
+
+    public function updateCountMembers($sessionName)
+    {
+	if($searches = session($sessionName))
+	{
+		$searches ++;
+	}
+	else
+	{
+		$searches = 1;
+	}
+
+	session([$sessionName => $searches]);
+    }
+
     private function is_bot()
     {
         if(!isset($_SERVER['HTTP_USER_AGENT'])) return false;
