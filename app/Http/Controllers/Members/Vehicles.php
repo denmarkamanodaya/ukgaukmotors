@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Members;
 use App\Filters\VehicleFilters;
 use App\Services\CarDataService;
 use App\Services\DealerService;
+use App\Services\RestrictUserService;
 use App\Services\SeoService;
 use App\Services\VehicleService;
 use Carbon\Carbon;
@@ -34,12 +35,15 @@ class Vehicles extends Controller
      */
     private $seoService;
 
-    public function __construct(VehicleService $vehicleService, DealerService $dealerService, CarDataService $carDataService, SeoService $seoService)
+    private $restrictUserService;
+
+    public function __construct(VehicleService $vehicleService, DealerService $dealerService, CarDataService $carDataService, RestrictUserService $restrictUserService, SeoService $seoService)
     {
         $this->vehicleService = $vehicleService;
         $this->dealerService = $dealerService;
         $this->carDataService = $carDataService;
-        $this->seoService = $seoService;
+	$this->seoService = $seoService;
+	$this->restrictUserService = $restrictUserService;
     }
 
     /**
@@ -50,6 +54,15 @@ class Vehicles extends Controller
      */
     public function index(VehicleFilters $filters)
     {
+        //limit car view
+        if($this->restrictUserService->restrictViewMembers('searches')) return redirect('/members/upgrade');
+
+	if(count($filters->request->all()) > 0)
+	{
+		$this->restructUserService->updateCountMembers('searches');
+	}
+	//end limit
+
         $filters = $this->sanitize($filters);
         if($filters->request->auctionDay != 0)
         {
@@ -160,6 +173,12 @@ class Vehicles extends Controller
      */
     public function show($id)
     {
+        //limit car view
+        if($this->restrictUserService->restrictViewMembers('displayed')) return redirect('/members/upgrade');
+        $this->restrictUserService->updateCountMembers('displayed');
+        //end limit
+
+
         \Auth::user()->load('garageFeed');
         $previous = app('Illuminate\Routing\UrlGenerator')->previous();
         $previous = str_replace(config('app.url'),'', $previous);

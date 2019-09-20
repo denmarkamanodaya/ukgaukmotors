@@ -80,7 +80,7 @@ class Vehicles extends Controller
             ]);
         }
 
-        // limit search
+	// limit search
         if($this->restrictUserService->restrictView('searches')) return redirect('/register');
 
         if(count($filters->request->all()) > 0)
