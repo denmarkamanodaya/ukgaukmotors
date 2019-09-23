@@ -25,6 +25,7 @@
 @stop
 
 @section('breadcrumbs')
+    @include('members.Vehicles.partials.upgradeSlider')
     @if($previous == '/members/mygarage/feed')
         {!! breadcrumbs([Settings::get('members_home_page_title') => Settings::get('members_home_page'), 'My Garage' => '/members/mygarage', 'My Feed' => '/members/mygarage/feed', ' Vehicle Details' => 'is_current']) !!}
     @elseif($previous == '/members/mygarage/shortlist')
@@ -77,10 +78,7 @@
 @stop
 
 
-@section('content')
-
-    @include('members.Vehicles.partials.upgradeSlider')
-    
+@section('content')    
     <div class="row">
         <!-- Main Content -->
         <div class="custom-content col-lg-9 col-md-9 col-sm-12 col-xs-12">

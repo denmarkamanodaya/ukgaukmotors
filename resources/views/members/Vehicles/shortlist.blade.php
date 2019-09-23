@@ -17,6 +17,7 @@
 @stop
 
 @section('breadcrumbs')
+    @include('members.Vehicles.partials.upgradeSlider')
     {!! breadcrumbs([Settings::get('members_home_page_title') => Settings::get('members_home_page'), 'Short Listed Vehicles' => 'is_current']) !!}
 @stop
 
@@ -27,9 +28,6 @@
 
 @section('content')
     <div class="row">
-
-        @include('members.Vehicles.partials.upgradeSlider')
-
         <div class="section-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
 

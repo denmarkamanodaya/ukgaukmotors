@@ -26,6 +26,7 @@
 @stop
 
 @section('breadcrumbs')
+    @include('members.Vehicles.partials.upgradeSlider')
     {!! breadcrumbs([Settings::get('members_home_page_title') => Settings::get('members_home_page'), 'Vehicles' => 'is_current']) !!}
 @stop
 
@@ -36,7 +37,7 @@
 
 @section('content')
 
-    @include('members.Vehicles.partials.upgradeSlider')
+
 
     <div class="row">
         <aside class="section-sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
