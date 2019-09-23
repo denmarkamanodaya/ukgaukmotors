@@ -14,6 +14,9 @@
     </script>
     <script type='text/javascript' src="{{ url('assets/js/shortlist.js')}}"></script>
     <script type='text/javascript' src="{{ url('assets/js/myGarageWidget.js')}}"></script>
+
+    <script type='text/javascript' src="{{ url('assets/js/js.cookie.min.js') }}"></script>
+    <script type='text/javascript' src="{{ url('assets/js/upgrade_slider.js') }}"></script>
 @stop
 
 @section('page_css')
@@ -75,6 +78,9 @@
 
 
 @section('content')
+
+    @include('members.Vehicles.partials.upgradeSlider')
+    
     <div class="row">
         <!-- Main Content -->
         <div class="custom-content col-lg-9 col-md-9 col-sm-12 col-xs-12">

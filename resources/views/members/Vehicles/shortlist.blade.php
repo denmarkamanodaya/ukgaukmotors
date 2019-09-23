@@ -28,6 +28,8 @@
 @section('content')
     <div class="row">
 
+        @include('members.Vehicles.partials.upgradeSlider')
+
         <div class="section-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row">
 

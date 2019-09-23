@@ -75,6 +75,9 @@
 
 
 @section('content')
+
+    @include('members.Vehicles.partials.upgradeSlider')
+    
     <div class="row">
         <!-- Main Content -->
         <div class="custom-content col-lg-9 col-md-9 col-sm-12 col-xs-12">

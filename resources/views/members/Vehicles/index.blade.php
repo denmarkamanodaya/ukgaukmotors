@@ -12,6 +12,10 @@
     </script>
     <script type='text/javascript' src="{{ url('assets/js/shortlist.js')}}"></script>
     <script type='text/javascript' src="{{ url('assets/js/search.js')}}"></script>
+
+
+    <script type='text/javascript' src="{{ url('assets/js/js.cookie.min.js') }}"></script>
+    <script type='text/javascript' src="{{ url('assets/js/upgrade_slider.js') }}"></script>
 @stop
 
 @section('page_css')
@@ -31,6 +35,9 @@
 
 
 @section('content')
+
+    @include('members.Vehicles.partials.upgradeSlider')
+
     <div class="row">
         <aside class="section-sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="cs-listing-filters">
@@ -42,7 +49,7 @@
                         {!! Form::text('search', isset($filters->request->search) ? $filters->request->search : '' , ['class' => '', 'id' => 'search', 'autocomplete' => 'false', 'placeholder' => 'Search', 'tabindex' => '-1']) !!}
                         {!!inputError($errors, 'search')!!}
                     </div>
-<hr>
+                    <hr>
 
                     <div class="cs-select-model mt-10">
                         <div class="cs-filter-title"><h6>Advanced Search</h6></div>

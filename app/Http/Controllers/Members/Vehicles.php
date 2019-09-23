@@ -55,12 +55,12 @@ class Vehicles extends Controller
     public function index(VehicleFilters $filters)
     {
         //limit car view
-        if($this->restrictUserService->restrictViewMembers('searches')) return redirect('/members/upgrade');
+ //        if($this->restrictUserService->restrictViewMembers('searches')) return redirect('/members/upgrade');
 
-	if(count($filters->request->all()) > 0)
-	{
-		$this->restructUserService->updateCountMembers('searches');
-	}
+	// if(count($filters->request->all()) > 0)
+	// {
+	// 	$this->restructUserService->updateCountMembers('searches');
+	// }
 	//end limit
 
         $filters = $this->sanitize($filters);
