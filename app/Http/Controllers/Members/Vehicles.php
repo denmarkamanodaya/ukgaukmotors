@@ -173,10 +173,10 @@ class Vehicles extends Controller
      */
     public function show($id)
     {
-        //limit car view
-        if($this->restrictUserService->restrictViewMembers('displayed')) return redirect('/members/upgrade');
-        $this->restrictUserService->updateCountMembers('displayed');
-        //end limit
+        // //limit car view
+        // if($this->restrictUserService->restrictViewMembers('displayed')) return redirect('/members/upgrade');
+        // $this->restrictUserService->updateCountMembers('displayed');
+        // //end limit
 
 
         \Auth::user()->load('garageFeed');
