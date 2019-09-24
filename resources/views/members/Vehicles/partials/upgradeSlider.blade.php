@@ -11,7 +11,7 @@ foreach($test AS $key => $value) { $test2[$key] = $value->type; }
 // Condition
 if( ! in_array('paid', $test2)) { ?>
 
-	<div id="slide_upgrade" style="background-color: #fff; height: 471px; left: 0; position: absolute; z-index: 999; margin-top: -30px">
+	<div id="slide_upgrade" style="background-color: #fff; height: 471px; left: 0; position: absolute; z-index: 999">
 	    <div id="slide_contents" style="float: left; display:none">
 	        <a href="#" id="slide_close_button">[close]</a>
 	    </div>
