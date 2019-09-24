@@ -41,8 +41,20 @@ class SeoService
     {
 
         if(isset($vehicle->name) && $vehicle->name != '') {
-            SEOMeta::setTitle('Vehicle - '.$vehicle->name);
-            OpenGraph::setTitle('Vehicle - '.$vehicle->name);
+
+	    $statement = "SELECT name, type FROM dealers WHERE id = $vehicle->dealer_id";
+	    $object = \DB::select($statement);
+	    $dealer_object = $object[0];
+		
+	    $title = "Vehicle at " . ($dealer_object->type == 'auctioneer' ? 'auction' : $dealer_object->type) . " " . $vehicle->name;
+	
+	    SEOMeta::setTitle($title);
+	    OpenGraph::setTitle($title);
+
+	    $description = "FIND YOUR PERFECT VEHICLE | This " . $vehicle->name . " is available now at " . ($dealer_object->type == 'auctioneer' ? 'auction' : $dealer_object->type) . " from " . $dealer_object->name;
+
+	    SEOMeta::setDescription($description);
+	    OpenGraph::setDescription($description);
         }
 
         if($vehicle->media->count() > 0)

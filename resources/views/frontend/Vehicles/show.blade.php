@@ -21,7 +21,7 @@
 @stop
 
 @section('page-header')
-    <span class="text-semibold">Vehicle - {{ $vehicle->name }}</span>
+    <span class="text-semibold">Vehicle at {{ $dealer->type }} {{ $vehicle->name }}</span>
 @stop
 
 
@@ -72,8 +72,8 @@
                         <div class="car-detail-heading">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="auto-text">
-                                        <h2>{{ $vehicle->name }}</h2>
+				    <div class="auto-text">
+                                        <h1>{{ $vehicle->name }} is available now at {{ ($dealer->type == 'auctioneer' ? 'auction' : $dealer->type) }} from {{ $dealer->name }}</h1>
                                         @include('frontend.NeedRegister.buttonNeedRegister')
                                     </div>
                                 </div>
