@@ -17,6 +17,7 @@ use App\Services\VehicleService;
 use Quantum\blog\Services\BlogService;
 use Illuminate\Support\Facades\Request;
 use Yajra\DataTables\Facades\DataTables;
+use App\Services\SeoService;
 
 class CarData extends Controller
 {
@@ -38,12 +39,15 @@ class CarData extends Controller
      */
     private $vehicleService;
 
-    public function __construct(CarDataService $carDataService, BlogService $blogService, RestrictUserService $restrictUserService, VehicleService $vehicleService)
+    private $seoService;
+	
+    public function __construct(CarDataService $carDataService, BlogService $blogService, RestrictUserService $restrictUserService, VehicleService $vehicleService, SeoService $seoService)
     {
         $this->carDataService = $carDataService;
         $this->blogService = $blogService;
         $this->restrictUserService = $restrictUserService;
-        $this->vehicleService = $vehicleService;
+	$this->vehicleService = $vehicleService;
+	$this->seoService = $seoService;
     }
 
     public function index($only=null)
@@ -94,7 +98,16 @@ class CarData extends Controller
         $carMakesList = $carMakes->pluck('name', 'slug');
         $vehicleMakes[0] = 'Select Make';
         $carMakesList = array_merge($vehicleMakes,$carMakesList->toArray());
-        $vehicleModels[0] = 'Select Model';
+	$vehicleModels[0] = 'Select Model';
+
+	// Seo
+	preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
+	dd($headings);
+	$seoData = (object) array(
+		'title' 	=> $carMake->name . " Motorpedia ALL models, history and specifications",
+		'description' 	=> strip_tags($headings[1][0])
+	);
+	$this->seoService->motorpedia($seoData);
 
         return view('frontend.Cars.Makes.show', compact('carMake', 'latestPosts', 'carMakesList', 'vehicleModels', 'relatedVehicles'));
     }

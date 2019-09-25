@@ -76,4 +76,17 @@ class SeoService
 
 
     }
+
+    public function motorpedia($data)
+    {
+	    if($data)
+	    {
+	            SEOMeta::setTitle($data->title);
+	            OpenGraph::setTitle($data->title);
+
+	            SEOMeta::setDescription($data->description);
+        	    OpenGraph::setDescription($data->description);
+	    }
+
+    }
 }
