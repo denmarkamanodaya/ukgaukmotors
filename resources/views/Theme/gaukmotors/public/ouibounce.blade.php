@@ -32,7 +32,7 @@
         padding: 20px;
         color: #cccccc;
     }
-    .ouimodal-message h1 {
+    .ouimodal-message h2 {
         color: #cccccc !important;
     }
     #newsletter_subscribe_form_oui {
@@ -56,7 +56,7 @@
 
 
                 <div class="ouimodal-message" style="max-height: 656.85px;">
-                    <h1 class="wph-modal--title">DON'T MISS OUT!</h1>
+                    <h2 class="wph-modal--title">DON'T MISS OUT!</h2>
                     <div id="newsletter_subscribe_form_oui">
                         <form id="newsletter_subscribe_oui" accept-charset="UTF-8" action="/newsletter/subscribe/gauk-auctions" method="POST">
                             <div id="subscribe_error_wrap" class="row" style="display: none;">
