@@ -102,7 +102,6 @@ class CarData extends Controller
 
 	// Seo
 	preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
-	dd($headings);
 	$seoData = (object) array(
 		'title' 	=> $carMake->name . " Motorpedia ALL models, history and specifications",
 		'description' 	=> strip_tags($headings[1][0])
