@@ -128,7 +128,16 @@ class CarData extends Controller
         $carMakesList = $carMakes->pluck('name', 'slug');
         $vehicleMakes[0] = 'Select Make';
         $carMakesList = array_merge($vehicleMakes,$carMakesList->toArray());
-        $vehicleModels[0] = 'Select Model';
+	$vehicleModels[0] = 'Select Model';
+
+	// Seo
+        preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
+        $seoData = (object) array(
+                'title'         => $carMake->name . " " . $carModel['name'] . " Motorpedia ALL models, history and specifications",
+		'description'   => strip_tags($headings[1][0]),
+        );
+        $this->seoService->motorpedia($seoData);
+
         unset($data);
         return view('frontend.Cars.Models.show', compact('carMake', 'carModel', 'latestPosts', 'carMakesList', 'vehicleModels', 'relatedVehicles'));
     }

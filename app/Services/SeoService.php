@@ -84,8 +84,8 @@ class SeoService
 	            SEOMeta::setTitle($data->title);
 	            OpenGraph::setTitle($data->title);
 
-	            SEOMeta::setDescription($data->description);
-        	    OpenGraph::setDescription($data->description);
+	            SEOMeta::setDescription(substr($data->description, 0, 150));
+        	    OpenGraph::setDescription(substr($data->description, 0, 150));
 	    }
 
     }
