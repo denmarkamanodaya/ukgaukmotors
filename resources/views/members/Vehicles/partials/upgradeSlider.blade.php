@@ -13,9 +13,10 @@ if( ! in_array('paid', $test2)) { ?>
 
 	<div id="slide_upgrade" style="background-color: #fff; height: 471px; left: 0; position: absolute; z-index: 999">
 	    <div id="slide_contents" style="float: left; display:none">
-	        <a href="#" id="slide_close_button">[close]</a>
+		<a href="#" id="slide_close_button" style="position: absolute; color: #fff">[close]</a>
+		<a href="upgrade" ><img src="{{ url('assets/images/upgrade-tab-open.jpg') }}" /></a>
 	    </div>
-	    <a href="#" style="position: absolute; right: 0"><img src="{{ url('assets/images/upgrade-tab.jpg') }}" /></a>
+	    <a href="#" id="upgrade_tab_image" style="position: absolute; right: 0"><img src="{{ url('assets/images/upgrade-tab.jpg') }}" /></a>
 	</div>
 
 <?php } else { } ?>
