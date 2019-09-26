@@ -46,6 +46,13 @@ class Dealers extends Controller
             }
         }
 
+        // Seo
+        $seoData = (object) array(
+                'title'         => "Auctioneers Directory Search ALL auctioneers in the UK",
+                'description'   => "FIND YOUR PERFECT MOTOR | Check out all used cars at auction at every auctioneer in the UK 300,000 Lots Daily"
+        );
+        $this->seoService->generic($seoData);
+
     return view('members.Dealers.index', compact('dealers', 'dealerCounties', 'dealerList'));
     }
 

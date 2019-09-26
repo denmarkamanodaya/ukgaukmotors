@@ -124,7 +124,15 @@ class Vehicles extends Controller
             }
         }
 
-        $viewType = 'grid';
+	$viewType = 'grid';
+
+        // Seo
+        $seoData = (object) array(
+                'title'         => "Search all (make) at auction and classifieds",
+                'description'   => "FIND YOUR PERFECT (MAKE) | UKs Most Powerful Car Auction Search Engine. Find (make) at Auction and classifieds. 300,000 Lots Daily"
+        );
+        $this->seoService->generic($seoData);
+
         return view('frontend.Vehicles.index', compact('vehicles', 'viewType', 'search', 'dealerList', 'dealerLocation', 'vehicleMakes', 'vehicleModels', 'auctionDays', 'filters'));
     }
 

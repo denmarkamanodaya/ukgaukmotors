@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-
 class Dealers extends Controller
 {
 
@@ -50,7 +49,15 @@ class Dealers extends Controller
             if(($key = array_search($search, $dealerCounties)) !== false) {
                 unset($dealerCounties[$key]);
             }
-        }
+	}
+
+        // Seo
+        $seoData = (object) array(
+                'title'         => "Auctioneers Directory Search ALL auctioneers in the UK",
+                'description'   => "FIND YOUR PERFECT MOTOR | Check out all used cars at auction at every auctioneer in the UK 300,000 Lots Daily",
+        );
+        $this->seoService->generic($seoData);
+
         return view('frontend.Dealers.index', compact('dealers', 'dealerCounties'));
     }
 

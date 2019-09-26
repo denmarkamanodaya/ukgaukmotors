@@ -77,15 +77,17 @@ class SeoService
 
     }
 
-    public function motorpedia($data)
+    public function generic($data)
     {
 	    if($data)
 	    {
 	            SEOMeta::setTitle($data->title);
 	            OpenGraph::setTitle($data->title);
 
-	            SEOMeta::setDescription(substr($data->description, 0, 150));
-        	    OpenGraph::setDescription(substr($data->description, 0, 150));
+	            SEOMeta::setDescription($data->description);
+		    OpenGraph::setDescription($data->description);
+
+		    SEOMeta::addMeta('robots', 'index,follow', 'name');
 	    }
 
     }

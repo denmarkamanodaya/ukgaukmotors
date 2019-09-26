@@ -104,9 +104,9 @@ class CarData extends Controller
 	preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
 	$seoData = (object) array(
 		'title' 	=> $carMake->name . " Motorpedia ALL models, history and specifications",
-		'description' 	=> strip_tags($headings[1][0])
+		'description' 	=> substr(strip_tags($headings[1][0]), 0, 150)
 	);
-	$this->seoService->motorpedia($seoData);
+	$this->seoService->generic($seoData);
 
         return view('frontend.Cars.Makes.show', compact('carMake', 'latestPosts', 'carMakesList', 'vehicleModels', 'relatedVehicles'));
     }
@@ -134,9 +134,9 @@ class CarData extends Controller
         preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
         $seoData = (object) array(
                 'title'         => $carMake->name . " " . $carModel['name'] . " Motorpedia ALL models, history and specifications",
-		'description'   => strip_tags($headings[1][0]),
+		'description'   => substr(strip_tags($headings[1][0]), 0, 150)
         );
-        $this->seoService->motorpedia($seoData);
+        $this->seoService->generic($seoData);
 
         unset($data);
         return view('frontend.Cars.Models.show', compact('carMake', 'carModel', 'latestPosts', 'carMakesList', 'vehicleModels', 'relatedVehicles'));

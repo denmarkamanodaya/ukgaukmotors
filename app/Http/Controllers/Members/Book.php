@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Quantum\blog\Services\BlogService;
 use Quantum\base\Services\CategoryService;
+use App\Services\SeoService;
 
 class Book extends Controller
 {
@@ -31,12 +32,15 @@ class Book extends Controller
      */
     private $bookSeoService;
 
-    public function __construct(BookService $bookService, BlogService $blogService, CategoryService $categoryService, BookSeoService $bookSeoService)
+    private $seoService;
+
+    public function __construct(BookService $bookService, BlogService $blogService, CategoryService $categoryService, BookSeoService $bookSeoService, SeoService $seoService)
     {
         $this->bookService = $bookService;
         $this->blogService = $blogService;
         $this->categoryService = $categoryService;
-        $this->bookSeoService = $bookSeoService;
+	$this->bookSeoService = $bookSeoService;
+	$this->seoService = $seoService;
     }
 
     /**
@@ -51,7 +55,15 @@ class Book extends Controller
         $latestPosts = $this->blogService->latest_posts(['members', 'public']);
         $latestPosts = $latestPosts->take(3);
         $categories = $this->categoryService->getCategoriesSortPosts('blog', ['members','public']);
-        $tags = $this->blogService->getTags('blog');
+	$tags = $this->blogService->getTags('blog');
+
+	// Seo
+        $seoData = (object) array(
+                'title'         => "GAUK Motors Automotive Guides and Books",
+                'description'   => "Browse our huge motoring library unique books and guides for the car enthusiast"
+        );
+        $this->seoService->generic($seoData);
+
         return view('members.Book.index', compact('books', 'latestPosts', 'categories', 'tags'));
     }
 
@@ -68,7 +80,15 @@ class Book extends Controller
         $latestPosts = $latestPosts->take(3);
         $categories = $this->categoryService->getCategoriesSortPosts('blog', ['members','public']);
         $tags = $this->blogService->getTags('blog');
-        $this->bookSeoService->book($book);
+	$this->bookSeoService->book($book);
+	
+	// Seo
+        $seoData = (object) array(
+                'title'         => "GAUK Motors Automotive Guides and Books",
+                'description'   => "Browse our huge motoring library unique books and guides for the car enthusiast"
+        );
+        $this->seoService->generic($seoData);
+
         return view('members.Book.show', compact('book', 'latestPosts', 'categories', 'tags'));
 
     }
