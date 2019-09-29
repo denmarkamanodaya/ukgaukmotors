@@ -59,25 +59,23 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="cs-social-media">
-                            <ul>
-<li><a href="https://www.facebook.com/gaukmotors/" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/facebook.png')}}"></a></li>
-<li><a href="https://twitter.com/GaukMotors" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/twitter.png')}}"></a></li>
-<li><a href="https://www.linkedin.com/in/paul-tranter-54588721" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/linkedin.png')}}"></a></li>
-<li><a href="https://plus.google.com/103019929601783259104" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/googleplus.png')}}"></a></li>
-<li><a href="https://gaukmotors.co.uk/posts/feed/rss" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/rss.png')}}"></a></li>
-<li><a href="https://www.youtube.com/channel/UCArAWeZk8sT2T45dee5_XqQ" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/youtube.png')}}"></a></li>
-<li><a href="https://drivetribe.com/t/eXa0LG7LSGORbrgFstsgdw?iid=H3IyoNx1TbyqB92M5RqeAA" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/drivetribe.png')}}"></a></li>
-<li><a href="https://www.instagram.com/motorpediawiki/" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/instagram.png')}}"></a></li>
-<li><a href="https://www.reddit.com/user/motorpedia" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/reddit.png')}}"></a></li>
-<li><a href="https://motorpedia.tumblr.com/" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/tumblr.png')}}"></a></li>
-<li><a href="https://wheelwell.com/paul-tranter-1" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/wheelwell.png')}}"></a></li>
-<li><a href="https://www.carthrottle.com/user/motorpedia/" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/carthrottle.png')}}"></a></li>
-<li><a href="https://www.pinterest.co.uk/FortyandDeuce/motorpedia/" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/pinterest.png')}}"></a></li>
-<li><a href="https://mix.com/motorpedia" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/mix.png')}}"></a></li>
-<li><a href="https://www.scoop.it/t/motoring-content" target="_blank"  data-original-title=""><img class="foot-soc-img" src="{{ url('images/scoop.png')}}"></a></li>
-                          
-                           </ul>
+			<div class="cs-social-media">
+<ul>
+<li><a href="https://www.facebook.com/gaukmotors/" target="_blank"  data-original-title="facebook"><img class="foot-soc-img" src="{{ url('images/facebook.png') }}" alt="facebook"></a></li>
+<li><a href="https://twitter.com/GaukMotors" target="_blank"  data-original-title="twitter"><img class="foot-soc-img" src="{{ url('images/twitter.png') }}" alt="twitter"></a></li>
+<li><a href="https://www.linkedin.com/in/paul-tranter-54588721" target="_blank"  data-original-title="linkedin"><img class="foot-soc-img" src="{{ url('images/linkedin.png') }}" alt="linkedin"></a></li>
+<li><a href="https://gaukmotors.co.uk/posts/feed/rss" target="_blank"  data-original-title="rss"><img class="foot-soc-img" src="{{ url('images/rss.png') }}" alt="rss"></a></li>
+<li><a href="https://www.youtube.com/channel/UCArAWeZk8sT2T45dee5_XqQ" target="_blank"  data-original-title="youtube"><img class="foot-soc-img" src="{{ url('images/youtube.png') }}" alt="youtube"></a></li>
+<li><a href="https://drivetribe.com/t/eXa0LG7LSGORbrgFstsgdw?iid=H3IyoNx1TbyqB92M5RqeAA" target="_blank"  data-original-title="drivetribe"><img class="foot-soc-img" src="{{ url('images/drivetribe.png') }}" alt="drive tribe"></a></li>
+<li><a href="https://www.instagram.com/motorpediawiki/" target="_blank"  data-original-title="instagram"><img class="foot-soc-img" src="{{ url('images/instagram.png') }}" alt="instagram"></a></li>
+<li><a href="https://www.reddit.com/user/motorpedia" target="_blank"  data-original-title="reddit"><img class="foot-soc-img" src="{{ url('images/reddit.png') }}" alt="reddit"></a></li>
+<li><a href="https://motorpedia.tumblr.com/" target="_blank"  data-original-title="Tumblr"><img class="foot-soc-img" src="{{ url('images/tumblr.png') }}" alt="tumblr"></a></li>
+<li><a href="https://wheelwell.com/paul-tranter-1" target="_blank"  data-original-title="wheelwell"><img class="foot-soc-img" src="{{ url('images/wheelwell.png') }}" alt="wheelwell"></a></li>
+<li><a href="https://www.carthrottle.com/user/motorpedia/" target="_blank"  data-original-title="car throttle"><img class="foot-soc-img" src="{{ url('images/carthrottle.png') }}" alt="carthrottle"></a></li>
+<li><a href="https://www.pinterest.co.uk/FortyandDeuce/motorpedia/" target="_blank"  data-original-title="Pinterest"><img class="foot-soc-img" src="{{ url('images/pinterest.png') }}" alt="Pinterest"></a></li>
+<li><a href="https://mix.com/motorpedia" target="_blank"  data-original-title="mix"><img class="foot-soc-img" src="{{ url('images/mix.png') }}" alt="mix"></a></li>
+<li><a href="https://www.scoop.it/t/motoring-content" target="_blank"  data-original-title="scoop"><img class="foot-soc-img" src="{{ url('images/scoop.png') }}" alt="scoop"></a></li>
+</ul>
                         </div>
                         <img class="img-responsive mt-20" src="{{ url('images/Footer_Icons.png')}}">
                     </div>
