@@ -134,9 +134,16 @@ class Vehicles extends Controller
 			'title'		=> "Search all " . $params . " at auction and classifieds",
 			'description'	=> "FIND YOUR PERFECT " . strtoupper($params) .  " | UKs Most Powerful Car Auction Search Engine. Find " . $params . " at Auction and classifieds. 300,000 Lots Daily"
 		);
-
-		$this->seoService->generic($seoData);
 	}
+	else
+	{
+		$seoData = (object) array(
+			'title' 	=> "Search ALL vehicles at car auction and classified",
+			'description'	=> "UKs Most Powerful Car Auction Search Engine. Find ALL Vehicles at car auction and classifieds. 300,000 Lots Daily"
+		);
+	}
+
+	$this->seoService->generic($seoData);
 
         return view('frontend.Vehicles.index', compact('vehicles', 'viewType', 'search', 'dealerList', 'dealerLocation', 'vehicleMakes', 'vehicleModels', 'auctionDays', 'filters'));
     }
