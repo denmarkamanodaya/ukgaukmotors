@@ -102,6 +102,7 @@ class CarData extends Controller
 
 	// Seo
 	preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
+	if(empty($headings[1])) {preg_match_all('|<h1>(.*)</h1>|iU', $carMake->description->content, $headings);}
 	$seoData = (object) array(
 		'title' 	=> $carMake->name . " Motorpedia ALL models, history and specifications",
 		'description' 	=> substr(strip_tags($headings[1][0]), 0, 150)
@@ -132,6 +133,7 @@ class CarData extends Controller
 
 	// Seo
         preg_match_all('|<h2>(.*)</h2>|iU', $carMake->description->content, $headings);
+	if(empty($headings[1])) {preg_match_all('|<h1>(.*)</h1>|iU', $carMake->description->content, $headings);}
         $seoData = (object) array(
                 'title'         => $carMake->name . " " . $carModel['name'] . " Motorpedia ALL models, history and specifications",
 		'description'   => substr(strip_tags($headings[1][0]), 0, 150)
