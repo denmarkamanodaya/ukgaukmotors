@@ -9,6 +9,7 @@ use Quantum\blog\Services\BlogSeoService;
 use Quantum\blog\Services\BlogService;
 use Quantum\base\Services\CategoryService;
 
+use App\Services\SeoService;
 
 class Posts extends Controller
 {
@@ -26,16 +27,19 @@ class Posts extends Controller
      */
     private $blogSeoService;
 
+    private $seoService;
+	
     /**
      * Posts constructor.
      * @param BlogService $blogService
      */
-    public function __construct(BlogService $blogService, CategoryService $categoryService, BlogSeoService $blogSeoService)
+    public function __construct(BlogService $blogService, CategoryService $categoryService, BlogSeoService $blogSeoService, SeoService $seoService)
     {
         $this->blogService = $blogService;
         if(\Settings::get('enable_blog') != '1') abort(404);
         $this->categoryService = $categoryService;
-        $this->blogSeoService = $blogSeoService;
+	$this->blogSeoService = $blogSeoService;
+	$this->seoService = $seoService;
     }
 
     public function index()
@@ -44,7 +48,15 @@ class Posts extends Controller
         $latestPosts = $this->blogService->latest_posts(['public']);
         $latestPosts = $latestPosts->take(3);
         $categories = $this->categoryService->getCategoriesSortPosts('blog', ['public']);
-        $tags = $this->blogService->getTags('blog');
+	$tags = $this->blogService->getTags('blog');
+
+	// Seo
+        $seoData = (object) array(
+                'title'         => "UK Car Auction Blog, News, Fun and Great Stuff",
+                'description'   => "Car auction and classifieds news, car auction alerts, quizzes, grab a cup of coffee and enjoy the motoring blog"
+        );
+        $this->seoService->generic($seoData);
+
         return view('blog::frontend.index', compact('posts', 'latestPosts', 'categories', 'tags'));
     }
 

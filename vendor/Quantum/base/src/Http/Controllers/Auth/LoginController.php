@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Quantum\base\Rules\Recaptcha;
+use App\Services\SeoService;
 
 class LoginController extends Controller
 {
@@ -29,17 +30,27 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/members/dashboard';
+	private $seoService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(SeoService $seoService)
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('firewall');
-        $this->redirectTo = \Settings::get('members_home_page');
+	$this->redirectTo = \Settings::get('members_home_page');
+
+	$this->seoService = $seoService;
+
+        // Seo
+        $seoData = (object) array(
+                'title'         => "Login",
+                'description'   => "Login | UKs Most Powerful Car Auction Search Engine, Cars, Motors, Commercials, Plant and Machinery at Auction. 300,000  Lots Daily"
+        );
+        $this->seoService->generic($seoData);
     }
 
     protected function validateLogin(Request $request)
