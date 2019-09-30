@@ -73,7 +73,15 @@ class CarData extends Controller
         $vehicleMakes[0] = 'Select Make';
         $carMakesList = array_merge($vehicleMakes,$carMakesList->toArray());
         $vehicleModels[0] = 'Select Model';
-        $latestPosts = $this->blogService->latest_posts(['public']);
+	$latestPosts = $this->blogService->latest_posts(['public']);
+
+        // Seo
+        $seoData = (object) array(
+                'title'         => "Motorpedia Motoring Encyclopedia Car Makers " . $only,
+                'description'   => "The most beautiful and comprehensive source of vehicle information on the planet. All vehicle manufacturers " . $only
+        );
+        $this->seoService->generic($seoData);
+
         if($only)
         {
             return view('frontend.Cars.Makes.index_only', compact('carMakes', 'latestPosts', 'carMakesList', 'vehicleModels', 'only', 'carMakesAlpha'));
