@@ -281,6 +281,9 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['admin']], function()
     Route::get('admin/import/getLots', ['as' => 'admin_import_getLots', 'uses' => 'Import@getLots']);
     Route::get('admin/import', ['as' => 'admin_import', 'uses' => 'Import@index']);
 
+    // Logs
+    Route::get('admin/parsing', ['as' => 'admin_parsing_viewer', 'uses' => 'QuantumSpider@showParsedData']);
+
 });
 
 //public routes
