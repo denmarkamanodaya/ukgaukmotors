@@ -7,7 +7,14 @@
 @stop
 
 @section('page_js')
-
+    <script>
+	$(function() {
+		$(".table tbody tr").click(function(){
+		//add the css class which has the required background color property to the clicked table row
+		$(this).css("background-color", "#00FFFF");
+		});
+        });
+    </script>
 @stop
 
 @section('page_css')
