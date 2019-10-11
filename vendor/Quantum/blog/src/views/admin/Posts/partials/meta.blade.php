@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h6 class="panel-title">
-            <a href="#accordion-control-right-group3" data-parent="#accordion-control-right" data-toggle="collapse" class="collapsed">Post Meta</a>
+            <a href="#accordion-control-right-group3" data-parent="#accordion-control-right" data-toggle="collapse" class="">Post Meta</a>
         </h6>
     </div>
     <div class="panel-collapse collapse" id="accordion-control-right-group3">

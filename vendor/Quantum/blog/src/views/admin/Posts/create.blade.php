@@ -18,7 +18,9 @@
         $(document).ready(function() {
             $("#anytime-both").AnyTime_picker({
                 format: "%M %D %Y %H:%i",
-            });
+		});
+	
+                $('.panel-collapse').collapse('show');
         });
 
         $('#tags').tagsinput({
@@ -26,7 +28,8 @@
                 return 'label label-success';
             }
         });
-        $('#lfm').filemanager('image', {prefix: '/filemanager'});
+	$('#lfm').filemanager('image', {prefix: '/filemanager'});
+
     </script>
 
 @stop
