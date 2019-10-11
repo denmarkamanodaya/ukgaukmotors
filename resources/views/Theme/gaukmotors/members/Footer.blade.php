@@ -23,7 +23,7 @@
 <li><a href="https://gaukmotors.co.uk/vehicles">Search Inventory</a></li>
 <li><a href="https://gaukmotors.co.uk/auctioneers">Directories</a></li>
 <li><a href="https://gaukauctions.com.com" target="_blank">GAUK Auctions</a></li>
-<li><a href="https://gaukmotors.co.uk/about-gauk-motors">About GAUK Motors</a></li>
+<li><a href="https://gaukmotors.co.uk/about-gauk-car-auctions">About GAUK Motors</a></li>
 <li><a href="https://gaukmotors.co.uk/history">GAUK History</a></li>
 <li><a href="https://gaukmedia.com" target="_blank">GAUK Media</a></li>
 <li><a href="https://gaukmotors.co.uk/gauk-gen4-aggregation-software" target="_blank">GAUK Gen4 Software</a></li>
