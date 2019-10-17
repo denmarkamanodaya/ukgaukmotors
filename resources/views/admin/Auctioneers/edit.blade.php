@@ -225,7 +225,22 @@
                             </div>
                         </div>
                     </div>
+		</div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                                {!! Form::open(array('method' => 'POST', 'url' => '/admin/dealers/auctioneer/delete')) !!}
+                                        {!! Form::hidden('slug', $auctioneer->slug, array()) !!}
+                                        <button class="btn bg-danger btn-labeled" type="submit"><b><i class="far fa-times"></i></b> Delete Auctioneer</button>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     {!! Form::close() !!}
