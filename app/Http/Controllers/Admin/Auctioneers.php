@@ -149,7 +149,7 @@ class Auctioneers extends Controller
 		$dealer->delete();
 
 		// Delete all vehicle as well
-		$auctioneer = Dealers::where('slug', $id)->firstOrFail();
+		$auctioneer = Dealers::where('slug', $slug)->firstOrFail();
 	        $this->vehicleService->deletefromAuctioneer($auctioneer->id);
 
 		// Add to deleted dealers log table (but non-existent)
