@@ -134,6 +134,42 @@ class Auctioneers extends Controller
 		return view('admin.Auctioneers.index');
 	}
 
+    public function deleteDealer(Request $request)
+    {
+	$slug = $request['slug'];
+
+	if($slug)
+	{
+        	$dealer = $this->getDealerBySlug($slug);
+		$path = rtrim(dealer_logo_path($dealer->id), '/');
+		// $dealer->media()->delete();
+	        array_map('unlink', glob("$path/*.*"));
+	        File::delete($path);
+		
+		$dealer->delete();
+
+		// Delete all vehicle as well
+		$auctioneer = Dealers::where('slug', $id)->firstOrFail();
+	        $this->vehicleService->deletefromAuctioneer($auctioneer->id);
+
+		// Add to deleted dealers log table (but non-existent)
+		#DeletedDealers::create(['dealer_id' => $dealer->id]);
+        	#\Activitylogger::log('Dealer Deleted : '.$dealer->name, $dealer);
+
+		flash('Dealer has been deleted.')->success();
+	}
+	else
+	{
+		flash('Slug empty, please report to developer')->error();
+	}
+
+	return view('admin.Auctioneers.index');
+    }
+
+    public function getDealerBySlug($slug)
+    {
+        return Dealers::where('slug', $slug)->firstOrFail();
+    }
 
     private function logoPicture($auctioneer, $request)
     {

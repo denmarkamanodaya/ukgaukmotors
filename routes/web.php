@@ -80,6 +80,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['admin']], function()
     Route::get('admin/dealers/auctioneers/data', ['as' => 'admin_auctioneers_data', 'uses' => 'Auctioneers@data']);
     Route::get('admin/dealers/auctioneer/create', ['as' => 'admin_auctioneer_create', 'uses' => 'Auctioneers@create']);
     Route::post('admin/dealers/auctioneer/create', ['as' => 'admin_auctioneer_save_create', 'uses' => 'Auctioneers@saveCreate']);
+    Route::post('admin/dealers/auctioneer/delete',      ['as' => 'admin_auctioneer_delete', 'uses' => 'Auctioneers@deleteDealer']);
     Route::get('admin/dealers/auctioneer/{id}', ['as' => 'admin_auctioneer_show', 'uses' => 'Auctioneers@show']);
     Route::get('admin/dealers/auctioneer/{id}/vehicles', ['as' => 'admin_auctioneer_vehicles', 'uses' => 'Auctioneers@vehicles']);
     Route::get('admin/dealers/auctioneer/{id}/edit', ['as' => 'admin_auctioneer_edit', 'uses' => 'Auctioneers@edit']);

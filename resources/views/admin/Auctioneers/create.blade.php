@@ -71,7 +71,7 @@
                                 Postcode :
                             </div>
                             <div class="col-md-10">
-                            	{!! Form::text('postcode', null, array('class' => 'form-control', 'id' => 'postcode', 'required' => 'required')) !!}
+                            	{!! Form::text('postcode', null, array('class' => 'form-control', 'id' => 'postcode')) !!}
                             </div>
                         </div>
 
