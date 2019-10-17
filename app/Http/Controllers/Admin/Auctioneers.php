@@ -6,7 +6,9 @@ use App\Models\Dealers;
 use App\Services\VehicleService;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
-
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
+use App\Models\Postcode;
 use Illuminate\Http\Request;
 
 
@@ -119,6 +121,9 @@ class Auctioneers extends Controller
 			$dealer->status = 'approved';
 			$dealer->save();
 
+			$dealer->logo = $this->logoPicture($dealer,$request);
+		        $dealer->save();
+
 			flash('Dealer has been created')->success();
 		}
 		else
@@ -128,6 +133,55 @@ class Auctioneers extends Controller
 
 		return view('admin.Auctioneers.index');
 	}
+
+
+    private function logoPicture($auctioneer, $request)
+    {
+        $logoPic = isset($request['logo'])? $request['logo'] : $auctioneer->logo;
+        $path = dealer_logo_path($auctioneer->id);
+        if($request['delPicture'])
+        {
+            $this->deleteLogoImages($path, $auctioneer);
+            $logoPic = null;
+        }
+
+        if($request->file('logo'))
+        {
+
+            $logoPic = $request->file('logo')->getClientOriginalName();
+            $logoPic = str_replace(' ', '_', $logoPic);
+
+            $image = Image::make($request->file('logo')->getRealPath());
+
+            File::exists($path) or File::makeDirectory($path);
+
+            if($logoPic != '')
+            {
+                $this->deleteLogoImages($path, $auctioneer);
+            }
+
+            //Save new
+            $image->save($path. $logoPic);
+
+            $image->resize(300, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($path.'/thumb300-'.$logoPic);
+
+            $image->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($path.'/thumb150-'.$logoPic);
+
+            $image->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($path.'/thumb100-'.$logoPic);
+
+            $image->resize(50, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($path.'/thumb50-'.$logoPic);
+
+        }
+        return $logoPic;
+    }
 
     public function vehicles($id)
     {
