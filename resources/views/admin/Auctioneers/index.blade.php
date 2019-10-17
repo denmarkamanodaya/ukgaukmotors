@@ -17,7 +17,7 @@
                     {data: 'id', name: 'id'},
                     {data: 'logo', name: 'logo', orderable: false, searchable: false},
                     {data: 'name', name: 'name'},
-                    {data: 'calendar_events_count', name: 'calendar_events_count'},
+                    //{data: 'calendar_events_count', name: 'calendar_events_count'},
                     {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false}
                 ],
@@ -54,6 +54,11 @@
 
                 <div class="panel-body">
 
+                    <a href="{{url('/admin/dealers/auctioneer/create')}}">
+                        <button class="btn bg-teal-400 btn-labeled mb-20" type="button">
+                            <b><i class="far fa-gavel"></i></b>Create New Auctioneer
+                        </button>
+		    </a>
 
                     <table class="table datatable-ajax table-bordered table-striped table-hover" id="auctioneers-table">
                         <thead>
@@ -61,7 +66,7 @@
                             <th class="col-md-1">Id</th>
                             <th class="col-md-1 text-center"></th>
                             <th class="col-md-6">Name</th>
-                            <th class="col-md-1 text-center">Events</th>
+                            <!-- <th class="col-md-1 text-center">Events</th> -->
                             <th class="col-md-2">Created</th>
                             <th class="col-md-1">Action</th>
                         </tr>

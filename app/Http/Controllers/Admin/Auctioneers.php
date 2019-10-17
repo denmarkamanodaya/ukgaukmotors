@@ -35,9 +35,13 @@ class Auctioneers extends Controller
 
     public function data()
     {
+	  /*
         $auctioneers = \Cache::rememberForever('auctioneers', function() {
-            return Dealers::withCount('calendarEvents')->orderBy('name', 'ASC')->get();
-        });
+		return Dealers::withCount('calendarEvents')->orderBy('name', 'ASC')->get();
+	});
+	*/
+
+	$auctioneers = Dealers::where('status', '=', 'approved')->orderBy('name', 'ASC')->get();
 
         return Datatables::of($auctioneers)
             ->editColumn('created_at', function ($model) {
@@ -63,7 +67,68 @@ class Auctioneers extends Controller
         $auctioneer = Dealers::where('slug', $id)->firstOrFail();
         return view('admin.Auctioneers.show', compact('auctioneer'));
     }
-    
+
+	public function create()
+	{
+		/*
+	        $categories = \App\Models\DealerCategories::whereHas('children')->orderBy('name', 'ASC')->get();
+	        $features = DealersFeatures::orderBy('name', 'ASC')->get();
+        	$countries = Countries::orderBy('name', 'ASC')->pluck('name', 'id');
+ 	        return view('admin.Auctioneers2.create', compact('categories', 'features', 'countries'));
+		*/
+		return view('admin.Auctioneers.create');
+	}
+
+    	public function saveCreate(Request $request)
+	{
+		// Generate slug
+		$slug = strtolower(str_replace(' ', '-', trim($request['name'])));
+
+		// Check if slug already exists
+		$check = Dealers::where('slug', '=', $slug)->first();
+		
+		// Generate Lat/Lang from Postcode
+		if($request['postcode'] != '')
+        	{
+            		if($geo_location = Postcode::postcode($request['postcode'])->first())
+            		{
+	                	$longitude  = $geo_location->longitude;
+	        	        $latitude   = $geo_location->latitude;
+            		}
+        	}
+
+		if(is_null($check))
+		{
+			// Main insert query
+		        $dealer = new Dealers();
+	        	$dealer->name = trim($request['name']);
+			$dealer->slug = $slug;
+			$dealer->address = trim($request['address']);
+			$dealer->town = trim($request['town']);
+			$dealer->postcode = trim($request['postcode']);
+			$dealer->county = trim($request['county']);
+			$dealer->longitude = isset($longitude) ? $longitude : '';
+			$dealer->latitude = isset($latitude) ? $latitude : '';
+			$dealer->phone = trim($request['phone']);
+			$dealer->email = trim($request['email']);
+			$dealer->website = trim($request['website']);
+			$dealer->auction_url = isset($request['auction_url']) ? trim($request['auction_url']) : '';
+			$dealer->online_bidding_url = isset($request['online_bidding_url']) ? trim($request['online_bidding_url']) : '';
+			$dealer->details = isset($request['details']) ? $request['details'] : '';
+			$dealer->type = 'auctioneer';
+			$dealer->status = 'approved';
+			$dealer->save();
+
+			flash('Dealer has been created')->success();
+		}
+		else
+		{
+			flash('Dealer already exists')->error();
+		}
+
+		return view('admin.Auctioneers.index');
+	}
+
     public function vehicles($id)
     {
         $auctioneer = Dealers::where('slug', $id)->firstOrFail();
