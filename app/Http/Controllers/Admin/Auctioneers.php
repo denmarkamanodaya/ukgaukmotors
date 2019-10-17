@@ -219,6 +219,16 @@ class Auctioneers extends Controller
         return $logoPic;
     }
 
+    private function deleteLogoImages($path, $auctioneer)
+    {
+        //remove old images
+        File::delete($path . $auctioneer->logo);
+        File::delete($path .'/thumb300-'. $auctioneer->logo);
+        File::delete($path .'/thumb150-'. $auctioneer->logo);
+        File::delete($path .'/thumb100-'. $auctioneer->logo);
+        File::delete($path .'/thumb50-'. $auctioneer->logo);
+    }
+
     public function vehicles($id)
     {
         $auctioneer = Dealers::where('slug', $id)->firstOrFail();
