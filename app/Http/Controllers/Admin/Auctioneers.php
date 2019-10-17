@@ -149,21 +149,21 @@ class Auctioneers extends Controller
 		$dealer->delete();
 
 		// Delete all vehicle as well
-		$auctioneer = Dealers::where('slug', $slug)->firstOrFail();
-	        $this->vehicleService->deletefromAuctioneer($auctioneer->id);
+		#$auctioneer = Dealers::where('slug', $slug)->firstOrFail();
+	        #$this->vehicleService->deletefromAuctioneer($auctioneer->id);
 
 		// Add to deleted dealers log table (but non-existent)
 		#DeletedDealers::create(['dealer_id' => $dealer->id]);
         	#\Activitylogger::log('Dealer Deleted : '.$dealer->name, $dealer);
 
 		flash('Dealer has been deleted.')->success();
+
+		return redirect('admin/dealers/auctioneers');
 	}
 	else
 	{
 		flash('Slug empty, please report to developer')->error();
 	}
-
-	return view('admin.Auctioneers.index');
     }
 
     public function getDealerBySlug($slug)
