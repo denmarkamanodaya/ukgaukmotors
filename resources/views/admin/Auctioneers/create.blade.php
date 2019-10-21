@@ -152,7 +152,7 @@
                                 Details :
                             </div>
                             <div class="col-md-10">
-                            	{!! Form::text('details', null, array('class' => 'form-control', 'id' => 'details')) !!}
+                            	{!! Form::textarea('details', null, array('class' => 'form-control', 'id' => 'details')) !!}
                             </div>
                         </div>
 

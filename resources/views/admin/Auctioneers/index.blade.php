@@ -68,7 +68,7 @@
                             <th class="col-md-6">Name</th>
                             <!-- <th class="col-md-1 text-center">Events</th> -->
                             <th class="col-md-2">Created</th>
-                            <th class="col-md-1">Action</th>
+                            <th class="col-md-2">Action</th>
                         </tr>
                         </thead>
 

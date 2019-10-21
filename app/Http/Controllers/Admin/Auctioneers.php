@@ -54,7 +54,7 @@ class Auctioneers extends Controller
                 return '';
             })
             ->addColumn('action', function ($auctioneer) {
-                return '<a href="'.url('admin/dealers/auctioneer/'.$auctioneer->slug).'" class="btn bg-teal-400 btn-labeled" type="button"><b><i class="fas fa-gavel"></i></b> Details</a>';
+                return '<a href="'.url('admin/dealers/auctioneer/'.$auctioneer->slug).'" class="btn bg-teal-400 btn-labeled" type="button"><b><i class="fas fa-gavel"></i></b> Details</a> <a href="' . url('auctioneer/' . $auctioneer->slug) . '" class="btn bg-teal-400 btn-labeled" type="button"><b><i class="fas fa-search-plus"></i></b> View</a>';
             })
             ->addColumn('logo', function ($auctioneer) {
                 return '<img src="'.url('images/dealers/'.$auctioneer->id.'/thumb50-'.$auctioneer->logo).'">';
@@ -174,16 +174,16 @@ class Auctioneers extends Controller
     private function logoPicture($auctioneer, $request)
     {
         $logoPic = isset($request['logo'])? $request['logo'] : $auctioneer->logo;
-        $path = dealer_logo_path($auctioneer->id);
+	$path = dealer_logo_path($auctioneer->id);
+
         if($request['delPicture'])
         {
             $this->deleteLogoImages($path, $auctioneer);
             $logoPic = null;
-        }
+	}
 
         if($request->file('logo'))
         {
-
             $logoPic = $request->file('logo')->getClientOriginalName();
             $logoPic = str_replace(' ', '_', $logoPic);
 
@@ -262,7 +262,8 @@ class Auctioneers extends Controller
         // dd($request->address, $id);
         // $calendarService = new CalendarService();
         // $calendarService->updateEvent($request, $event);
-        // \Cache::forget('auctioneers');
+	// \Cache::forget('auctioneers');
+
         Dealers::where('slug', $id)->update(array(
             'address'       => $request->address,
             'town'          => $request->town,
@@ -277,7 +278,14 @@ class Auctioneers extends Controller
             'online_bidding_url' => $request->online_bidding_url,
             'details'       => $request->details,
         ));
-        flash('Dealer has been updated')->success();
+	
+	// Upload new logo
+	$dealer_obj 		= Dealers::where('slug', '=', $id)->firstOrFail();
+	$request['delPicture']	= true;
+	$dealer_obj->logo 	= $this->logoPicture($dealer_obj, $request);
+	$dealer_obj->save();
+
+	flash('Dealer has been updated')->success();
         return redirect('/admin/dealers/auctioneer/'.$id.'/edit');
     }
 }

@@ -22,7 +22,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(array('method' => 'POST', 'url' => 'admin/dealers/auctioneer/' . $auctioneer->slug . '/edit', 'class' => 'form-horizontal')) !!}
+    {!! Form::open(array('method' => 'POST', 'url' => 'admin/dealers/auctioneer/' . $auctioneer->slug . '/edit', 'class' => 'form-horizontal', 'files' => true)) !!}a
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
@@ -35,6 +35,19 @@
                                 <h3>{{$auctioneer->name}}</h3>
                             </div>
                         </div>                    
+
+
+			<div class="row mb-20">
+				<div class="row">
+		                	<div class="col-md-2 text-right text-bold">
+                	        		Logo:
+                		        </div>
+		                	<div class="col-md-10 text-center mb-10">
+                			        {!! Form::file('logo') !!}
+						<img class='img-responsive' src="{{ url('/images/dealers/'.$auctioneer->id.'/'.$auctioneer->logo)}}">
+        	        	        </div>
+				</div>
+			</div>
 
                         <div class="row mb-20">
                             <div class="col-md-2 text-right text-bold">
@@ -189,14 +202,6 @@
                 </div>
             </div>
             <div class="col-md-4">
-                @if($auctioneer->logo)
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-10">
-                            <img class='img-responsive' src="{{ url('/images/dealers/'.$auctioneer->id.'/'.$auctioneer->logo)}}">
-                        </div>
-                    </div>
-                @endif
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
