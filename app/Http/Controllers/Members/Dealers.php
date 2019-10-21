@@ -36,7 +36,7 @@ class Dealers extends Controller
         $dealers = $this->dealerService->getDealers(true);
         $dealerCounties = $this->dealerService->getDealerCounty();
         $dealerList[0] = 'Select Auctioneer';
-        $dealerList = array_merge($dealerList,$this->dealerService->dealerSelectList()->toArray());
+        $dealerList = array_merge($dealerList,$this->dealerService->dealerSelectList('all')->toArray());
         array_unshift($dealerCounties, 'Choose Location');
         $searches = ['0', ' '];
         foreach ($searches as $search)

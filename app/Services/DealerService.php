@@ -225,13 +225,13 @@ class DealerService
     {
         if($type == 'all')
         {
-            return Cache::rememberForever('dealer_list_'.$type, function () use ($type) {
+            //return Cache::rememberForever('dealer_list_'.$type, function () use ($type) {
                 return Dealers::orderBy('name', 'ASC')->pluck('name', 'slug');
-            });
+            //});
         }
-        return Cache::rememberForever('dealer_list_'.$type, function () use ($type) {
+        //return Cache::rememberForever('dealer_list_'.$type, function () use ($type) {
             return Dealers::where('type', $type)->orderBy('name', 'ASC')->pluck('name', 'slug');
-        });
+        //});
     }
     
     public function dealerCarImages($dealer)
