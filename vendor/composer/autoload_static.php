@@ -7,9 +7,9 @@ namespace Composer\Autoload;
 class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -19,18 +19,18 @@ class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
         '3d7167bb5c3fe4baa10f347ccc41140d' => __DIR__ . '/..' . '/sofa/eloquence-base/src/helpers.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
-        'e23faeee409e941dc9b4c80386209c39' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/functions.php',
         '618aa3e081fc502871177c829f6a9c2a' => __DIR__ . '/..' . '/kitetail/zttp/src/Zttp.php',
+        'e23faeee409e941dc9b4c80386209c39' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/functions.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
     );
 
@@ -193,8 +193,8 @@ class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Yajra\\DataTables\\' => 
         array (
@@ -326,11 +326,11 @@ class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
         ),
         'Sofa\\Eloquence\\' => 
         array (
-            0 => __DIR__ . '/..' . '/sofa/eloquence-validable/src',
-            1 => __DIR__ . '/..' . '/sofa/eloquence-mutable/src',
+            0 => __DIR__ . '/..' . '/sofa/eloquence-base/src',
+            1 => __DIR__ . '/..' . '/sofa/eloquence-mappable/src',
             2 => __DIR__ . '/..' . '/sofa/eloquence-metable/src',
-            3 => __DIR__ . '/..' . '/sofa/eloquence-mappable/src',
-            4 => __DIR__ . '/..' . '/sofa/eloquence-base/src',
+            3 => __DIR__ . '/..' . '/sofa/eloquence-mutable/src',
+            4 => __DIR__ . '/..' . '/sofa/eloquence-validable/src',
         ),
         'Seld\\PharUtils\\' => 
         array (
@@ -402,8 +402,8 @@ class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
         ),
         'Mediawiki\\Api\\' => 
         array (
-            0 => __DIR__ . '/..' . '/addwiki/mediawiki-api-base/src',
-            1 => __DIR__ . '/..' . '/addwiki/mediawiki-api/src',
+            0 => __DIR__ . '/..' . '/addwiki/mediawiki-api/src',
+            1 => __DIR__ . '/..' . '/addwiki/mediawiki-api-base/src',
         ),
         'League\\Flysystem\\' => 
         array (
@@ -666,6 +666,7 @@ class ComposerStaticInit213eb3f215bd67b120358b78bece4e6d
         'App\\Http\\Controllers\\Admin\\GaukSettings' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GaukSettings.php',
         'App\\Http\\Controllers\\Admin\\Import' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Import.php',
         'App\\Http\\Controllers\\Admin\\Importing' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Importing.php',
+        'App\\Http\\Controllers\\Admin\\QuantumSpider' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/QuantumSpider.php',
         'App\\Http\\Controllers\\Admin\\Tools' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Tools.php',
         'App\\Http\\Controllers\\Admin\\VehicleFeatures' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/VehicleFeatures.php',
         'App\\Http\\Controllers\\Admin\\VehicleMakes' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/VehicleMakes.php',

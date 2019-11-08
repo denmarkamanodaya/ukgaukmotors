@@ -205,7 +205,7 @@ class Vehicles extends Controller
         $this->seoService->vehicle($vehicle);
         if($vehicle->vehicle_listing_type == 1)
         {
-            return view('members.Vehicles.show', compact('vehicle', 'dealer', 'latestVehicles', 'relatedVehicles', 'dealerVehicleImages', 'shortlist', 'previous'));
+            return view('members.Vehicles.show', compact('vehicle', 'dealer', 'latestVehicles', 'relatedVehicles', 'previous', 'shortlist', 'dealerVehicleImages'));
         }
         if($vehicle->vehicle_listing_type == 2)
         {

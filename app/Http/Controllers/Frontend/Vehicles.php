@@ -219,7 +219,7 @@ class Vehicles extends Controller
 
             if($vehicle->vehicle_listing_type == 1)
             {
-                return view('frontend.Vehicles.show', compact('vehicle', 'dealer', 'latestVehicles', 'relatedVehicles', 'dealerVehicleImages', 'shortlist', 'previous'));
+                return view('frontend.Vehicles.show', compact('vehicle', 'dealer', 'latestVehicles', 'relatedVehicles', 'dealerVehicleImages'));
             }
 
             if($vehicle->vehicle_listing_type == 2)
@@ -233,7 +233,7 @@ class Vehicles extends Controller
                     $features = $features->groupBy('feature.name');
                 }
                 if($vehicle->mot != '') $vehicle->mot = Carbon::createFromFormat('Y-m-d', $vehicle->mot)->toFormattedDateString();
-                return view('frontend.Vehicles.showClassified', compact('vehicle', 'latestVehicles', 'relatedVehicles', 'shortlist', 'previous', 'features', 'dealerVehicleImages'));
+                return view('frontend.Vehicles.showClassified', compact('vehicle', 'latestVehicles', 'relatedVehicles', 'features', 'dealerVehicleImages'));
             }
         }
     }

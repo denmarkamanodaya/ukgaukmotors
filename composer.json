@@ -8,9 +8,9 @@
         "php": ">=7.0.0",
         "Quantum/base": "~2.0.0",
         "Quantum/blog": "~2.0.0",
+        "Quantum/calendar": "~2.0.0",
         "Quantum/newsletter": "~2.0.0",
         "Quantum/tickets": "~2.0.0",
-        "Quantum/calendar": "~2.0.0",
         "addwiki/mediawiki-api": "~0.7.0",
         "aws/aws-sdk-php": "~3.0",
         "barryvdh/laravel-ide-helper": "^2.4",
@@ -19,30 +19,9 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "league/csv": "8.0",
+        "predis/predis": "^1.1",
         "roumen/feed": "2.11.*"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@bitbucket.org:gaukquantum/quantumbase-core.git"
-        },
-        {
-            "type": "git",
-            "url": "git@bitbucket.org:gaukquantum/quantumbase-blog.git"
-        },
-        {
-            "type": "git",
-            "url": "git@bitbucket.org:gaukquantum/quantum-tickets.git"
-        },
-        {
-            "type": "git",
-            "url": "git@bitbucket.org:gaukquantum/quantum-newsletter.git"
-        },
-        {
-            "type": "git",
-            "url": "git@bitbucket.org:gaukquantum/quantumbase-calendar.git"
-        }
-    ],
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
         "filp/whoops": "~2.0",

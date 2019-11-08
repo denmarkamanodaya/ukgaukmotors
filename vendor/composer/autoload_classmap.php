@@ -52,6 +52,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\GaukSettings' => $baseDir . '/app/Http/Controllers/Admin/GaukSettings.php',
     'App\\Http\\Controllers\\Admin\\Import' => $baseDir . '/app/Http/Controllers/Admin/Import.php',
     'App\\Http\\Controllers\\Admin\\Importing' => $baseDir . '/app/Http/Controllers/Admin/Importing.php',
+    'App\\Http\\Controllers\\Admin\\QuantumSpider' => $baseDir . '/app/Http/Controllers/Admin/QuantumSpider.php',
     'App\\Http\\Controllers\\Admin\\Tools' => $baseDir . '/app/Http/Controllers/Admin/Tools.php',
     'App\\Http\\Controllers\\Admin\\VehicleFeatures' => $baseDir . '/app/Http/Controllers/Admin/VehicleFeatures.php',
     'App\\Http\\Controllers\\Admin\\VehicleMakes' => $baseDir . '/app/Http/Controllers/Admin/VehicleMakes.php',

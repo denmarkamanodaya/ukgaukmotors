@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Yajra\\DataTables\\' => array($vendorDir . '/yajra/laravel-datatables-oracle/src'),
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
@@ -39,7 +39,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Symfony\\Component\\BrowserKit\\' => array($vendorDir . '/symfony/browser-kit'),
     'Sofa\\Hookable\\' => array($vendorDir . '/sofa/hookable/src'),
-    'Sofa\\Eloquence\\' => array($vendorDir . '/sofa/eloquence-validable/src', $vendorDir . '/sofa/eloquence-mutable/src', $vendorDir . '/sofa/eloquence-metable/src', $vendorDir . '/sofa/eloquence-mappable/src', $vendorDir . '/sofa/eloquence-base/src'),
+    'Sofa\\Eloquence\\' => array($vendorDir . '/sofa/eloquence-base/src', $vendorDir . '/sofa/eloquence-mappable/src', $vendorDir . '/sofa/eloquence-metable/src', $vendorDir . '/sofa/eloquence-mutable/src', $vendorDir . '/sofa/eloquence-validable/src'),
     'Seld\\PharUtils\\' => array($vendorDir . '/seld/phar-utils/src'),
     'Seld\\JsonLint\\' => array($vendorDir . '/seld/jsonlint/src/Seld/JsonLint'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
@@ -57,7 +57,7 @@ return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Mediawiki\\DataModel\\' => array($vendorDir . '/addwiki/mediawiki-datamodel/src'),
-    'Mediawiki\\Api\\' => array($vendorDir . '/addwiki/mediawiki-api-base/src', $vendorDir . '/addwiki/mediawiki-api/src'),
+    'Mediawiki\\Api\\' => array($vendorDir . '/addwiki/mediawiki-api/src', $vendorDir . '/addwiki/mediawiki-api-base/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'League\\Csv\\' => array($vendorDir . '/league/csv/src'),
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
