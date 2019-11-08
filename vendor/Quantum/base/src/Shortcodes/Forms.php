@@ -28,5 +28,12 @@ class Forms
         $contents = $view->render();
         return $contents;
     }
+	
 
+    public static function sociaMediaShare(ShortcodeInterface $s)
+    {
+    	$view = View::make('base::frontend.SocialMedia.index');
+	$contents = $view->render();
+	return $contents;
+    }
 }
