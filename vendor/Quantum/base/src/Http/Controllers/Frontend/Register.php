@@ -57,7 +57,8 @@ class Register extends Controller
     public function store(RegisterRequest $request)
     {
         $membership = $this->membershipService->postedRegisterForm($request);
-        return redirect($membership->page_after_registration);
+        #return redirect($membership->page_after_registration);
+	return redirect('/social-media-share');
     }
 
     public function messages()
