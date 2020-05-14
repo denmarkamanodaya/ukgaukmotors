@@ -30,7 +30,6 @@ class WebHookListener
             $this->error = 'Invalid Webhook ID';
             return false;
         }
-
         $signatureVerification = new VerifyWebhookSignature();
         $signatureVerification->setAuthAlgo($headers['PAYPAL-AUTH-ALGO']);
         $signatureVerification->setTransmissionId($headers['PAYPAL-TRANSMISSION-ID']);

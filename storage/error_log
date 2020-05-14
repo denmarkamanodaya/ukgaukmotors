@@ -1,0 +1,12 @@
+[30-Sep-2019 00:05:13 UTC] PHP Warning:  PHP Startup: gearman: Unable to initialize module
+Module compiled with module API=20151012
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[30-Sep-2019 00:05:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/cpanel/ea-php71/root/usr/lib64/php/modules/mongo.so' - /opt/cpanel/ea-php71/root/usr/lib64/php/modules/mongo.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[30-Sep-2019 00:05:13 UTC] PHP Warning:  PHP Startup: gearman: Unable to initialize module
+Module compiled with module API=20151012
+PHP    compiled with module API=20160303
+These options need to match
+ in Unknown on line 0
+[30-Sep-2019 00:05:13 UTC] PHP Warning:  Module 'mongodb' already loaded in Unknown on line 0

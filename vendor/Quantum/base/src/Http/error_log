@@ -1,0 +1,4 @@
+[12-May-2020 05:36:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library 'mongo.so' (tried: /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mongo.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mongo.so: undefined symbol: zval_used_for_init), /opt/cpanel/ea-php72/root/usr/lib64/php/modules/mongo.so.so (/opt/cpanel/ea-php72/root/usr/lib64/php/modules/mongo.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+[12-May-2020 05:36:58 UTC] PHP Warning:  Module 'gearman' already loaded in Unknown on line 0
+[12-May-2020 05:36:58 UTC] PHP Warning:  Module 'mongodb' already loaded in Unknown on line 0
+[12-May-2020 05:36:58 UTC] PHP Warning:  Module 'mongodb' already loaded in Unknown on line 0

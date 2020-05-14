@@ -352,10 +352,10 @@ class PaymentService
 
     public function webhook($request, $gateway)
     {
-
         $this->setGateway($gateway);
         //validate input
         $bodyReceived = file_get_contents('php://input');
+	#error_log(date('Y-m-d H:i:s') . " | " . print_r(array($bodyReceived), true) . "\n", 3, '/tmp/dk_server_log');
         //dd($bodyReceived);
         $transaction = $this->payment->verifyWebHook($bodyReceived, $request);
         //already processed hook

@@ -39,7 +39,7 @@
                     @foreach($posts as $post)
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="blog-listing medium-view">
-                                @if($post->meta->featured_image)
+                                @if(isset($post->meta->featured_image))
                                     <div class="cs-media">
                                         <figure>
                                             <a href="{!! postLink($post) !!}"><img src="{{ url($post->meta->featured_image) }}" alt="" /></a>
@@ -91,7 +91,7 @@
                         <li>
 
                             <div class="cs-media">
-                                @if($post->meta->featured_image)
+                                @if(isset($post->meta->featured_image))
                                     <figure>
                                         <a href="{!! postLink($post) !!}"><img alt="" src="{{ url($post->meta->featured_image) }}"></a>
                                     </figure>

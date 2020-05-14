@@ -196,7 +196,8 @@ Route::group(['namespace' => 'Quantum\base\Http\Controllers', 'middleware' => ['
         Route::post('register', ['as' => 'register_store', 'uses' => 'Register@store']);
     });
     //Firewalled Routes
-    Route::group(['namespace' => 'Frontend', 'middleware' => ['firewall']], function()
+    #Route::group(['namespace' => 'Frontend', 'middleware' => ['firewall']], function()
+	Route::group(['namespace' => 'Frontend'], function()
     {
         //Commerce
         Route::get('cart/add/{model}/{modelId}', ['as' => 'cart_public_add', 'uses' => 'Cart@add']);
@@ -206,7 +207,10 @@ Route::group(['namespace' => 'Quantum\base\Http\Controllers', 'middleware' => ['
         Route::post('payment/ipn/{gateway}', ['as' => 'public_payment_ipn', 'uses' => 'Payment@ipn']);
         Route::get('payment/ipn/{gateway}', ['as' => 'public_payment_ipn', 'uses' => 'Payment@ipn']);
         Route::post('payment/webhook/{gateway}', ['as' => 'public_payment_webhook', 'uses' => 'Payment@webhook']);
-        //Route::get('payment/webhook/{gateway}/{type?}', ['as' => 'public_payment_webhook', 'uses' => 'Payment@webhookTest']);
+        Route::get('payment/webhook/{gateway}/{type?}', ['as' => 'public_payment_webhook', 'uses' => 'Payment@webhookTest']);
+
+	#Route::post('payment/webhook/{gateway}/gerger', ['as' => 'public_payment_webhook', 'uses' => 'Payment@webhookTest2']);
+	#Route::get('payment/webhook/{gateway}/gerger', ['as' => 'public_payment_webhook', 'uses' => 'Payment@webhookTest2']);
 
     });
 

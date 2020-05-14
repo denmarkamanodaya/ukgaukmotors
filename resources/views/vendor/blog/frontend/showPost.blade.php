@@ -110,7 +110,7 @@
                         <li>
 
                             <div class="cs-media">
-                                @if($post->meta->featured_image)
+                                @if(isset($post->meta->featured_image))
                                     <figure>
                                         <a href="{!! postLink($post) !!}"><img alt="" src="{{ url($post->meta->featured_image) }}"></a>
                                     </figure>
