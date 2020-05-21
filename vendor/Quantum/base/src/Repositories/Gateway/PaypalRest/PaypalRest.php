@@ -56,8 +56,8 @@ class PaypalRest
      *string $_ClientId
      *string $_ClientSecret
      */
-    private $_ClientId = 'Aember-xbXA02Wn5QLC0Zq_4eM-iBC0oLi7flrWIwP3tM6PQxFTYLCrRNR-TkVHkW-IC2mDoSpQd33GT';
-    private $_ClientSecret ='EAakavONBmfTlMa8cjpKmEMaL6AKSbbURrwgA9wDBACG0hH5bCC3HvedPxJbgVa3-geSWvhrB-jsC_RF';
+    private $_ClientId = 'AYmIh7itn7cHQq47bmiNaSz0fTJuhEmbCfnKBOU8Rbx_rHITQALKrEgcvbOjhrDi3R8bJzgI5wyv2YjM';
+    private $_ClientSecret ='ELhPG-EET5EA3RUZ70ln3RREb3VymCAVgyHTaz4xO_2uGhuBVxy-XN1zgNcqkw5pv3ry1TE6SLmwHWDu';
     private $returnUrl = '';
     private $cancelUrl = '';
 
