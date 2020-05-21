@@ -1,0 +1,4 @@
+/storage/*
+.env
+error_log
+/vendor

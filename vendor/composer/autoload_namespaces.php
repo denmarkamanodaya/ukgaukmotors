@@ -7,11 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'UpdateHelper\\' => array($vendorDir . '/kylekatarnls/update-helper/src'),
-    'Roumen\\Feed' => array($vendorDir . '/roumen/feed/src'),
-    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
     'Parsedown' => array($vendorDir . '/erusev/parsedown'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Laravelium\\Feed' => array($vendorDir . '/roumen/feed/src'),
     'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
     'Cornford\\Googlmapper' => array($vendorDir . '/cornford/googlmapper/src'),
     'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
